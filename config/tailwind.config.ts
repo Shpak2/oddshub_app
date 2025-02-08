@@ -6,7 +6,41 @@ const mobileBase = 375
 const tabletBase = 768
 const desktopBase = 1440
 
+const globalStyles = {
+  ':root': {
+    '--color-primary': '#FFFFFF',
+    '--color-secondary': '#171921',
+    '--color-border': '#1B76FF',
+    '--color-background': '#F0F6FB',
+    '--color-accent': '#FF8615',
+    '--color-success': '#9CD323',
+    '--color-error': '#9CD323',
+    '--color-light': '#6F7383',
+    '--color-select': '#405BC1',
+    '--color-fixture-bg': '#E3E6F3',
+    '--color-tertiary': '#F7F8FA',
+  },
+  '.dark': {
+    '--color-primary': '#1c3d5a',
+    '--color-secondary': '#f9a825',
+    '--color-border': '#1B76FF',
+    '--color-background': '#F0F6FB',
+    '--color-accent': '#FF8615',
+    '--color-success': '#9CD323',
+    '--color-error': '#9CD323',
+    '--color-light': '#6F7383',
+    '--color-select': '#405BC1',
+    '--color-fixture-bg': '#E3E6F3',
+    '--color-tertiary': '#F7F8FA',
+  },
+  'html': {
+    // fontFamily: 'Open Sans, sans-serif',
+    backgroundColor: 'var(--color-background)',
+  },
+}
+
 const config: Config = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{vue,js,ts,jsx,tsx}',
     './components/**/*.{vue,js,ts,jsx,tsx}',
@@ -17,10 +51,29 @@ const config: Config = {
       md: { min: '768px', max: '1024px' },
       lg: '1025px',
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Open Sans', 'sans-serif'],
+      },
+      colors: {
+        primary: 'var(--color-primary)',
+        secondary: 'var(--color-secondary)',
+        border: 'var(--color-border)',
+        background: 'var(--color-background)',
+        accent: 'var(--color-accent)',
+        success: 'var(--color-success)',
+        error: 'var(--color-error)',
+        light: 'var(--color-light)',
+        select: 'var(--color-select)',
+        'fixture-bg': 'var(--color-fixture-bg)',
+        tertiary: 'var(--color-tertiary)',
+      },
+    },
   },
   plugins: [
-    plugin(({ matchUtilities }) => {
+    plugin(({ matchUtilities, addBase }) => {
+
+      addBase(globalStyles);
       // Mobile
       matchUtilities(
         {

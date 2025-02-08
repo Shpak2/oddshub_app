@@ -5,5 +5,10 @@ declare module 'nuxt/config' {
     tailwindcss?: any;
     seo?: any;
     strapi?: any;
+    fonts?: {
+      google?: {
+        families?: Record<string, number[]>
+      }
+    };
   }
 }
