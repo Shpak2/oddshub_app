@@ -3,9 +3,10 @@
 import i18nConfig from './config/i18n.config';
 import seoConfig from './config/seo.config'
 import strapiConfig from './config/strapi.config'
-// import tailwindConfig from './config/tailwind.config';
+import tailwindConfig from './config/tailwind.config';
 
 export default defineNuxtConfig({
+  // css: ['@/assets/styles/main.scss'],
   compatibilityDate: '2024-11-01',
   modules: [
     '@nuxtjs/tailwindcss',
@@ -20,6 +21,9 @@ export default defineNuxtConfig({
   i18n: i18nConfig,
   seo: seoConfig,
   strapi: strapiConfig,
-  // tailwindcss: tailwindConfig,
+  tailwindcss: {
+    configPath: tailwindConfig,
+    quiet: true,
+  },
   devtools: { enabled: true }
 })
