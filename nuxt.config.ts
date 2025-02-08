@@ -4,6 +4,7 @@ import i18nConfig from './config/i18n.config';
 import seoConfig from './config/seo.config'
 import strapiConfig from './config/strapi.config'
 import tailwindConfig from './config/tailwind.config';
+import headConfig from './config/head.config'
 
 export default defineNuxtConfig({
   // css: ['@/assets/styles/main.scss'],
@@ -24,6 +25,12 @@ export default defineNuxtConfig({
   tailwindcss: {
     configPath: tailwindConfig,
     quiet: true,
+  },
+  app: {
+    head: {
+      title: headConfig.title,
+      link: headConfig.link
+    }
   },
   devtools: { enabled: true }
 })
