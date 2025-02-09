@@ -6,5 +6,12 @@ export default {
     { rel: 'shortcut icon', href: '/favicon/favicon.ico' },
     { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicon/apple-touch-icon.png' },
     { rel: 'manifest', href: '/favicon/site.webmanifest' },
+    // {
+    //   rel: 'preload',
+    //   as: 'font',
+    //   href: 'https://fonts.gstatic.com/s/opensans/v28/mem8YaGs126MiZpBA-UFVZ0e.ttf',
+    //   type: 'font/ttf',
+    //   crossorigin: 'anonymous'
+    // },
   ]
 }

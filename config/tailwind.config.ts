@@ -6,39 +6,6 @@ const mobileBase = 375
 const tabletBase = 768
 const desktopBase = 1440
 
-const globalStyles = {
-  ':root': {
-    '--color-primary': '#FFFFFF',
-    '--color-secondary': '#171921',
-    '--color-border': '#1B76FF',
-    '--color-background': '#F0F6FB',
-    '--color-accent': '#FF8615',
-    '--color-success': '#9CD323',
-    '--color-error': '#9CD323',
-    '--color-light': '#6F7383',
-    '--color-select': '#405BC1',
-    '--color-fixture-bg': '#E3E6F3',
-    '--color-tertiary': '#F7F8FA',
-  },
-  '.dark': {
-    '--color-primary': '#1c3d5a',
-    '--color-secondary': '#f9a825',
-    '--color-border': '#1B76FF',
-    '--color-background': '#F0F6FB',
-    '--color-accent': '#FF8615',
-    '--color-success': '#9CD323',
-    '--color-error': '#9CD323',
-    '--color-light': '#6F7383',
-    '--color-select': '#405BC1',
-    '--color-fixture-bg': '#E3E6F3',
-    '--color-tertiary': '#F7F8FA',
-  },
-  'html': {
-    // fontFamily: 'Open Sans, sans-serif',
-    backgroundColor: 'var(--color-background)',
-  },
-}
-
 const config: Config = {
   darkMode: 'class',
   content: [
@@ -54,6 +21,9 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ['Open Sans', 'sans-serif'],
+      },
+      boxShadow: {
+        'custom-secondary': '0px 2px 6px 0px rgba(var(--color-secondary-rgb), 0.1)',
       },
       colors: {
         primary: 'var(--color-primary)',
@@ -73,7 +43,7 @@ const config: Config = {
   plugins: [
     plugin(({ matchUtilities, addBase }) => {
 
-      addBase(globalStyles);
+      // addBase(globalStyles);
       // Mobile
       matchUtilities(
         {

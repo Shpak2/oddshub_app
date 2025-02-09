@@ -6,6 +6,9 @@ import strapiConfig from './config/strapi.config';
 import headConfig from './config/head.config';
 
 export default defineNuxtConfig({
+  css: [
+    '@/assets/styles/styles.scss',
+  ],
   compatibilityDate: '2024-11-01',
   modules: [
     '@nuxtjs/tailwindcss',
@@ -24,7 +27,7 @@ export default defineNuxtConfig({
   fonts: {
     google: {
       families: {
-        'Open Sans': [400, 600, 700] // або інші ваги, які вам потрібні
+        'Open Sans': [400, 500, 700] // або інші ваги, які вам потрібні
       }
     }
   },
