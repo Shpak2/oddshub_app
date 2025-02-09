@@ -1,13 +1,10 @@
-// plugins/ripple.ts
 import type { DirectiveBinding } from 'vue'
 import { defineNuxtPlugin } from '#app'
 
 const RippleDirective = {
   mounted(el: HTMLElement, binding: DirectiveBinding) {
-    // На сервері (SSR) не виконуємо ніяких операцій, щоб уникнути помилок.
     if (process.server) return;
 
-    // Реальна логіка для клієнта:
     el.style.position = 'relative';
     el.style.overflow = 'hidden';
 
@@ -29,6 +26,5 @@ const RippleDirective = {
 };
 
 export default defineNuxtPlugin((nuxtApp) => {
-  // Реєструємо директиву «ripple» незалежно від середовища.
   nuxtApp.vueApp.directive('ripple', RippleDirective);
 });

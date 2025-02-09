@@ -43,7 +43,6 @@ const config: Config = {
   plugins: [
     plugin(({ matchUtilities, addBase }) => {
 
-      // addBase(globalStyles);
       // Mobile
       matchUtilities(
         {
